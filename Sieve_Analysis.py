@@ -2,6 +2,7 @@ import pandas as pd
 import sys
 import numpy as np
 import scipy.interpolate as scpi
+import scipy.optimize as scpo
 import matplotlib.pyplot as plt
 print('This program can be used for sieve analysis of only 1 material at a time')
 print('''Enter 1 if you want to enter a csv/excel file
@@ -56,10 +57,11 @@ For macOS long press fn and search for it in emojis section.''')
         l+=[l1]
     p=float(input('Enter weight retained on pan (in g)'))
     df=pd.DataFrame(l,columns=['Sieve Size','Sieve Size in µm','Weight Retained (in g)'])
-W1=float(input('Enter total weight of the sample in g'))
-e=float(input('Enter maximum % error in weight calculation'))
 W2=np.nansum(df['Weight Retained (in g)'])
 W2+=p
+print(f'''From the table the weight of sample is coming approximately as {W2} g''')
+W1=float(input('Enter total weight of the sample in g'))
+e=float(input('Enter maximum % error in all calculations'))
 if not W2>=W1*(1-(e/100)) and not W2<=W1*(1+(e/100)):
     print('Calculation Error. Test needs to be redone')
     sys.exit()
@@ -93,3 +95,10 @@ plt.grid(True, which='major', linestyle='-', linewidth=0.8, color='gray', alpha=
 plt.grid(True, which='minor', linestyle=':', linewidth=0.5, color='gray', alpha=0.5)
 plt.grid(True,alpha=0.7)
 plt.show()
+co=input('Do you want to check particle size based on percentile. Enter <No> if No else press anything/enter for a Yes')
+while co.upper()!='NO':
+    p=float(input('Enter the percentile of particle size/ sieve size'))
+    f=lambda x:pchip(np.log10(x))-p
+    r=scpo.root_scalar(f,bracket=[min(xs),max(xs)],method='brentq')
+    print(f'''The {p} percentile sieve size is {r.root} µm''')
+    co=input('Do you want to check particle size based on percentile. Enter <No> if No else press anything/enter for a Yes')
