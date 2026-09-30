@@ -62,7 +62,7 @@ W2+=p
 print(f'''From the table the weight of sample is coming approximately as {W2} g''')
 W1=float(input('Enter total weight of the sample in g'))
 e=float(input('Enter maximum % error in all calculations'))
-if not W2>=W1*(1-(e/100)) and not W2<=W1*(1+(e/100)):
+if not W2>=W1*(1-(e/100)) or not W2<=W1*(1+(e/100)):
     print('Calculation Error. Test needs to be redone')
     sys.exit()
 x=list(df['Sieve Size in µm'])
