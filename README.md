@@ -13,4 +13,4 @@
 5. If the user wants, the program plots % finer against sieve size on a logarithmic scale, with a smooth curve fitted through the points using PCHIP interpolation.
 6. The user can then find the sieve size corresponding to any percentile of % finer from this curve, such as D10, D30 or D60, repeated for as many percentiles as desired.
 
-Soil Lab Graph.png is a sample % finer vs sieve size graph created using this program.
+`Soil Lab Graph.png` is a sample % finer vs sieve size graph created using this program.
