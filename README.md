@@ -10,11 +10,16 @@
   - `matplotlib`
   - `openpyxl`
   - Install the packages with `pip install pandas numpy scipy matplotlib openpyxl`
+- **Choices you will be asked to make** (type the value shown)
+  - Input method: `1` read a CSV or Excel file, `2` type the values in
+  - Plot the % finer against sieve size: `Yes` or `No`
+  - Look up the particle size at a percentile (such as D10, D30 or D60): press Enter for yes, or `No` to skip
 - **Data to have ready**
-  - Sieve sizes and the weight retained (g) on each sieve and the pan
-  - Either typed in, or as a CSV or Excel file in the same folder as the program
-  - Actual total weight of the sample
-  - Maximum allowed percentage error
+  - The sieve sizes with units (`mm` or `µm`) and the weight retained (g) on each, plus the weight retained on the pan
+  - For a file: the file name with its extension (`.csv` or `.xlsx`), and the names of the columns holding each value
+  - The actual total weight of the sample (g)
+  - The maximum allowed percentage error
+  - A name for the output Excel file, typed without `.xlsx`
 
 1. This program performs the sieve analysis of a soil or aggregate sample, computing the percentage of the sample retained on and passing through each sieve, and plotting the particle size distribution curve of % finer against sieve size. It works for only one material at a time.
 2. The user either reads the sieve sizes and weights retained from a CSV or Excel file, or enters them manually sieve by sieve along with the weight retained on the pan. Sieve sizes are entered with their unit, in mm or µm, and weights in g. If the file does not contain columns named Sieve Size and Weight Retained (in g), the user is shown the available columns and asked which ones to use, and a last row named Pan is taken as the weight retained on the pan.
