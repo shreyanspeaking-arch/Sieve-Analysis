@@ -2,8 +2,19 @@
 
 **🧰 Prerequisites**
 
-- **Python 3** with `pandas`, `numpy`, `scipy`, `matplotlib`, `openpyxl`: `pip install pandas numpy scipy matplotlib openpyxl`
-- **Data to have ready:** the sieve sizes and the weight retained (g) on each sieve and the pan, typed in or as a CSV or Excel file in the same folder as the program, plus the actual total weight of the sample and the maximum allowed percentage error
+- **Software**
+  - Python 3
+  - `pandas`
+  - `numpy`
+  - `scipy`
+  - `matplotlib`
+  - `openpyxl`
+  - Install the packages with `pip install pandas numpy scipy matplotlib openpyxl`
+- **Data to have ready**
+  - Sieve sizes and the weight retained (g) on each sieve and the pan
+  - Either typed in, or as a CSV or Excel file in the same folder as the program
+  - Actual total weight of the sample
+  - Maximum allowed percentage error
 
 1. This program performs the sieve analysis of a soil or aggregate sample, computing the percentage of the sample retained on and passing through each sieve, and plotting the particle size distribution curve of % finer against sieve size. It works for only one material at a time.
 2. The user either reads the sieve sizes and weights retained from a CSV or Excel file, or enters them manually sieve by sieve along with the weight retained on the pan. Sieve sizes are entered with their unit, in mm or µm, and weights in g. If the file does not contain columns named Sieve Size and Weight Retained (in g), the user is shown the available columns and asked which ones to use, and a last row named Pan is taken as the weight retained on the pan.
